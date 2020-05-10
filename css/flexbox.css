@@ -1,0 +1,46 @@
+body {
+	margin: 0px;
+}
+
+#container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+h1 {
+	font-family: fantasy;
+	font-size: 3em;
+	border-bottom: 2px solid pink;
+	border-right: 2px solid pink;
+	width: 350px;
+	text-align: center;
+	box-shadow: 4px 4px 4px #888888;
+}
+
+img {
+	height: 300px;
+	width: 400px;
+	margin: 10px;
+	transition: all 1s;
+	/* Above (linked with below) tells you that when an action
+	takes place, that it wants the image to transform over 1 second*/
+}
+
+img:hover {
+	transform: scale(1.1);
+}
+
+.boxmodel {
+	border: 25px solid red;
+	display: inline-block;
+	padding: 5px 10px 5px 10px;
+	font-size: 75px;
+	margin: 0px 25px 0px 40px;
+	background-color: red;
+	transition: transform 20s;
+}
+
+.boxmodel:hover {
+	transform: rotate(1080deg);
+}

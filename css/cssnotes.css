@@ -1,0 +1,44 @@
+body {
+	background-color: aliceblue;
+}
+
+.code {
+	color: orange;
+}
+
+h3 {
+	color: darkblue;
+	border: 5px dashed rgba(255, 176, 170 ,0.5) ;
+	text-align: center;
+
+}
+
+.text {
+	color: limegreen;
+}
+
+.document {
+	color: darkblue;
+}
+
+.help {
+	color: pink;
+
+}
+
+h4 {
+	color: black;
+	font-size: 100px;
+	text-align: center;
+	background-image: linear-gradient(red, yellow, pink);
+	text-shadow: 2px 2px 8px #FF0000;
+}
+
+.boxmodel {
+	border: 25px solid red;
+	display: inline-block;
+	padding: 5px 20px 20px 20px;
+	font-size: 75px;
+	margin: 0px 25px 0px 40px;
+	background-color: red;
+}

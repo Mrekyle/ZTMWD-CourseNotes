@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My First Web page Example</title>
+</head>
+<header>
+	<nav>
+		<a href="index.html"><strong>Click here to go back to the main page</strong></a>
+	</nav>
+</header><br>
+<body>
+
+	<h2>Information</h2>
+	<p>Forms are used for registration to the website such as a newsletter, or social media account and can ask basically anything you want
+	You need to start the form with the form tag 'form' which needs a closing '/form'
+	Inside the form tag you have the attribute which is telling you what it wants, such as the 'input' tag, which can have many different types inside.<br>
+	
+	For example the different types can be: 
+	<ol>
+		<li>text - asking for text based submissions</li>
+		<li>submit - creates a button to click to send the information </li>
+		<li>value - which sets the text inside of the submit type, such as 'Register!'</li>
+		<li>reset - automatically clears the form back to its original state </li>
+		<li>email - is specific for email registration, and will recognise if an email is invalid </li>
+		<li>date - asks for the date, IE your date of birth </li>
+		<li>radio - makes clickable objects, such as asking for gender, But will need to add this for each gender, for the answer to show up when submitted, you need to add the 'value' attribute so it posts what answer is selected.</li>
+		<li>name - for the above example, it makes it so that only one can be selected, to link them, you need to do 'name="gender" which needs to be in each of the inputs that are to be connected </li>
+		<li>checkbox - is essentially the same as above, but means that multiple entries can be selected</li>
+		<li>'password' - specifies that there should be a password - included in this, are attributes such as 'min' which specifies the minimum number of characters the password can be </li>
+	</ol><br>
+	There is also a 'required' attribute for inside the input attribute, which means that for the form to be submitted, that information has to be present</p><br>
+
+	<p>When a drop down menu is required to have a selection of different options you will need to use the 'select' tag, this does require a closing tag to.
+		Inside of the selection tag you will need to add 'option' tags, which tells the web page what the different options avaliable are.<br> Such as: 'option value="volvo"'Volvo'/option'<br> There is also no limit to how many of these can be added, such as the countries of the world dorp down, But for a friendly user experiance, You dont want to add too many options, and you can also add an other option, to allow users to input their own information.</p><br>
+
+		<p>Inside the 'select' tag there is also multiple different attributes too. These are:</p>
+
+		<ul>
+			<li>'autofocus' - that the drown down list will automatically get focus when the page is loaded</li>
+			<li>'disabled' - specifies that the drop down list is disabled and not able to be used</li>
+			<li>'form_id' - specifies who the form belongs to</li>
+			<li>'multiple'  - allows multiple selections</li>
+			<li>'name' - defines the name of the drop down list, so that the selected answer can be posted in the results</li>
+			<li>'required' - requires that this information is selected before it can be submitted</li>
+			<li>'size' - specifies the number of visible options in the drop down list</li>
+		</ul>
+
+	<p>Below I will start to add some examples of forms, with all the different types being used, so we can see them all function.</p><br>
+
+	<form method="GET">
+		First Name: <input type="text" name="firstname"><br>
+		Last Name: <input type="text" name="lastname"><br>
+		Email: <input type="email" name="email" required=""><br>
+		Password: <input type="password" minlength="6" name="password"><br>
+		Date Of Birth: <input type="date" name="dateofbirth"><br>
+		Gender: <br>
+		Male: <input type="radio" name="gender" value="Male"><br>
+		Female: <input type="radio" name="gender" value="Female"><br>
+		Other: <input type="text" name="gender"><br>
+		Pets: <br>
+		Cat: <input type="checkbox" name="cat"><br>
+		Dog: <input type="checkbox" name="dog"><br>
+		Birds: <input type="checkbox" name="birds"><br>
+		Car's:
+		<select name="Car's">
+			<option value="audi">Audi</option>
+			<option value="volvo">Volvo</option>
+			<option value="ferrari">Ferrari</option><
+		</select><br>
+		<input type="submit" name="" value="Register!"> <input type="reset" name="" value="Reset!">
+	</form><br>
+
+	<p>Depending on where the code is situated, it will depend where the text is, like above I have the text before the code, so it goes first, if I have it after the code, the text will go after the checkboxes and clickable objects</p>
+
+	<p>When submitting the form, the information is sent like this, and will be sent to where it has been defined to go.</p>
+
+	?firstname=fake&lastname=man&email=kylechart%40yahoo.co.uk&password=jeejeje&dateofbirth=2020-04-08&gender=Female&gender=&cat=on&Car%27s=ferrari
+
+</body>
+</html>

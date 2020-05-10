@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Css Notes</title>
+	<link rel="stylesheet" type="text/css" href="../css/cssnotes.css">
+</head>
+<header>
+	<nav>
+		<a href="index.html"><strong>Click here to go home!</strong></a><hr>
+	</nav>
+</header>
+<body>
+
+	<h3>CSS NOTES</h3>
+
+	<p>Writing CSS Code is very simple, all you need to do is create a seperate file with the extension of .css, the name of the file can be anything you like, but will most likely be the same as the file that it is styling</p>
+
+	<p>An example of css code looks like:<br>
+	h1 {<br>
+		color: red;<br>
+	}<br>
+	</p><hr>
+
+	<p>When you are creating a style sheet for a web page you will need to link it to where its needed, you do this by using the 'link' tag in the pre existing 'head' tag, which is where all the basic information for the <strong><span class="help">website</span></strong> is held.Every page can have different styling, you just have to create a seperate style sheet and change the name in the linking tag, so it knows where to go. It should look something like this = <br>
+		'link rel="stylesheet" type="text/css" href="style.css'
+	</p><hr>
+
+	<p>If you want to add a comment in css, it is slightly different to html, you will have to do /* to do this, again, it doesnt affect anything on the website, and only the developers can see it.</p><hr>
+
+	<p>css stands for Cascading Style Sheet, which means that it takes the last input on the page as the correct one. For example, if you have two diffrent 'h1' tags, one after the other setting it to different colors, one being red, and the next green. When the web browser reads it, it will say okay this should be red, but then it see's that it should be green, so it will set it to green. For example - <br>
+	<p class="code">
+		h1 {<br>
+		color: red;<br>
+		}<br>
+		h1 {<br>
+			color: green;<br>
+		}<br>
+	</p>
+	</p><hr>
+
+	<p class="text">You can also add styling directly into the html web page its self, either by using the 'style' '/style' tags, where you can write normal css straight into the document. or you can add different atributes to the tags such as the 'header' tag. </p><hr>
+
+	<p><strong>Seperation of concerns,</strong> is a very common phrase in the development feilds, basically its the polite way of saying, do what you know, or stick to what your good at.</p><hr>
+
+	<p>The same as with html coding, as long as you know the basic layout and tags that you will use on a daily basis, you are generally set, and if you need something extra, there is always google. here are a few websites that have pretty much everything you need for css programming.</p>
+	<ul>
+		<a href="https://css-tricks.com/almanac/"><li>CSS Tricks Almanac</li></a>
+		<a href="http://paletton.com/#uid=14u0u0kkJlXaFw0g0qFqwfBw0aF"><li>Paletton</li></a>
+	</ul><hr>
+
+	<p>With css color codes, you can also use HEX numbers '#ff4444', RGB 'rgb(255, 255, 255) or RGBA rgba(255, 255, 255, 0.5) With rgba, the final number is the opacity of the color, always set between 0 and 1.</p><hr>
+
+	<p>You can seperate different paragraphs by using the class attribute, for example 'p class="helloworld"' in the html file, and then in the css file you read it by using .helloworld {}. This allows you to select a specific paragraph and set individual styling. A class can also have multiple names, in css you do it exactly the same. But in the html file it will look like - <br> 'p class="home hello"'</p><hr>
+
+	<p class="help">You can select seperate words by using the 'span' tags and setting a class to edit in css, but this may get messy if you do it for every single word.</p><hr>
+
+	<p>Here is a CSS cheatsheet of sorts, outlining some of the different elements you can use.<br>CSS Cheat Sheet
+
+	Reference:<br>
+	*https://www.w3schools.com/cssref/css_selectors.asp<br>
+	*https://css-tricks.com/almanac/<br>
+	Cascading Style Sheets at the most basic level it indicates that <br>the order of CSS rules matter. <br>
+	<br>
+	.class - Can be used multiple times, and multiple times at once<br>
+	#id - Can only be used once, only used for the 'div' tag<br>
+	* - means all elements on the html file, normally at the top of the css file, but remember css ususes the lowest line of code in the file for the correct one.<br>
+	<br>
+
+	element - the single element such as 'h1'<br>
+	element, element - to have the same propeties as each other <br>
+	element element - this means that all the elements inside a pre existing element, such as 'h1'Hello'p'Helloworld'/p''/h1'<br>
+	element > element - this is the same as above, but it wont select everything, it only wants the elements whos parents are the first element, not an element wrapped in another element where the parent is the first element.<br>
+	element + element - this means that it will select the specified element direcetly after the first with closing tags<br>
+	<br>
+	:hover - this makes it so, when the cursor hovers over the element, it can change the styling, or show something completly different, added directly after the selector and before the brackets.<br>
+	:last-child - last and first are the exact same, they just select the first or last line of code in a class element<br>
+	:first-child<br>
+	!important (not recommended) - overrides all of the pre existing code, and makes itself the most important code<br>
+
+
+	What seletors win out in the cascade depends on:<br>
+	-Specificity<br>
+	-Importance<br>
+	-Source Order</p><hr>
+
+	<p>
+		
+		<ul>
+			<li>text-decoration - to edit the look of the test, ie line theough, or underline</li>
+			<li>text-transform - allows you to make the whole text uppercase and lowercase </li>
+			<li>line-height - sets the amount of pixels between each line of text</li>
+			<li>font-style - such as setting the text to italic</li>
+			<li>font-weight - number between 100 and 900 or just bold to make the text bold </li>
+			<li>font-size - setting the size of the font, either in pixels or percentages</li>
+			<li>font-family - changes the font, such as Times New Roman, with fonts with multiple names, quotations are needed - "Times New Roman". And can also have mutlipe fonts, for incase, the specified font cant be read - "Times New Roman", Georgia etc...</li>
+		</ul><br><hr>
+
+		<p>To have custom fonts there are a few ways to do this, you can either include the font file in the website files and link it the same way as a css file, or you can use <a href="https://fonts.google.com/">Google Fonts</a> and link it the same way as a stylesheet, remembering to reference the font name in the css stylesheet that is used. Also remembering to set a secondary font, incase the site where the file is, is down, making it unable to grab the font. When using the link, it does not need a type element.</p>
+	</p><hr>
+
+	<p>When insterting an image in css you select it either by having it as a class, or in a divider, or if its the only image on the page you can simply use 'img' in the css file. You can specify the sizes and such in css too, but it is more efficient to do that in the html code. When you want to position the image so that the text is wrapping around the image you use the element 'float' which either goes left or right. This element was solely designed for this purpose.</p><br>
+
+	<p>The above way isnt the best use of the code float, as it can mess up the any other code on the page. But there is a simple way to fix this by using 'clear: both;' whicich has to be placed under the code with the 'float' element and it will override it.</p><br><hr>
+
+	<h4>New Section</h4>
+
+	<p>Just a little playing around with the shaddow and gradient elements above</p>
+
+	<p>My Example code - <br>
+	h4 {<br>
+	color: black;<br>
+	font-size: 100px;<br>
+	text-align: center;<br>
+	background-image: linear-gradient(red, yellow, pink);<br>
+	text-shadow: 2px 2px 8px #FF0000;<br>
+	}</p>
+
+	<hr>
+
+	<p>In css there is a thing called the box model, meaning the layout of the page, with margin, border, padding, content. All around the page, and you can use this model in seperate styling too. in web dev code, the stylying always goes in this format - top, right, bottom, left. Ill execute this below.</p>
+
+	<div class="boxmodel">A</div>
+	<div class="boxmodel">B</div>
+	<div class="boxmodel">C</div>
+
+	<p>With the padding code, you can do it induvidually, but its more efficent and quicker to do it all together, in the above format.</p>
+
+	<p>To create space around the selected box's you use the margin element again using the above format, or individual or just all around standard.</p><hr>
+
+	<ol>
+		<li>px - the standard way of setting the size of specific text, layouts, images etc...</li>
+		<li>em - says 5 times the size of the previous size, most likely used in the 'span' or 'div' tags.</li>
+		<li>rem - sets the font size to the default size of html file's fonts</li>
+	</ol><hr>
+
+	<p>When making a responsive website, instead of using px, em, rem, you can use 'vh' which stands for viewport height, so depeneding on the browser size it will always make sure that a percentage of that viewport will be visable at all times, ie '50vh' will make sure 50% is taken up by the specified item. </p>
+
+	<p>To make a navbar sticky and flow with the page, simply add a new class, or use a pre existing one, and add 'position: fixed;, width: 100%; and top: 0;</p><br><hr>
+
+	<p>You are able to create color pickers in css directly into the html file by doing 'input class="color1" type="color" name="color1" value="#00ff00"'</p>
+	<p>you can also use css to create gradients, like i have above, but here is the defult syntax - 'background: linear-gradient(to right, red , yellow);'</p>
+
+
+</body>
+</html>

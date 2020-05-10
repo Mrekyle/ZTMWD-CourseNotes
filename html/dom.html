@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM Model</title>
+	<style type="text/css">
+		body {
+			background-color: aliceblue;
+		}
+		.done {
+			text-decoration: line-through;
+		}
+	</style>
+</head>
+<header>
+	<nav>
+		<a href="index.html"><strong>Click here to go home!</strong></a><br>
+		<a href="domexc.html"><strong>For the DOM excercise</strong></a>
+	</nav>
+</header>
+<body>
+	<hr>
+	<h3>Document Object Model</h3><br>
+	<p>This is what the web browser creates to be able to read the file once it has the requested files. It also allows us to manipulate and change anything on the page, thoguh javascript scripts or the console on the browser. As every browser has its own Javascript engine(called various different names)<br>
+			<p>Chrome - V8</p>
+			<p>Edge - ChakaCore</p>
+			<p>Safari - Nitros</p>
+			<p>Firefox - Spidermonkey</p>
+	<br></p>
+	<p>
+		<h4>Dom Selectors</h4><br>
+	<br>
+	getElementsByTagName - <strong>document.getElementsByTagName("h1")[0];</strong> - Finds the tag.<br>
+	getElementsByClassName - <strong>document.getElementsByClassName("first");</strong> - Finds all elements with the same class name.<br>
+	getElementById - <strong>document.getElementById("");</strong> - Finds the first element with the specific id.<br>
+	<br>
+	<h4><strong>Use these ones as much as possible, They are more powerfull than the above.</strong></h4>
+	querySelector - <strong>document.querySelector("");</strong> - Selects the first item that it finds IE in a list.<br>
+	querySelectorAll - <strong>document.querySelectorAll("");</strong> - Will select everything it finds. <br>
+	<br>
+
+	getAttribute - <strong>document.querySelector("").getAttribute("")</strong> - This will select the first attribute it finds with the specified name.<br>
+	setAttribute - <strong>document.querySelector("").setAttribute("random, 1000")</strong> - Will set the selected attribute as something new, Example inside<br>
+	<p>Both of the above, can be switched out with query selector.</p>
+	<br>
+
+	<strong>##Changing Styles</strong><br>
+	<br>
+	style.{property} - <strong>document.querySelector("h1").style.background = "yellow"</strong> - Will change the background of the h1 element to yellow, Can be done with any css attributes and any elements in the html document. But this adds it to the html file, but to keep seperation, its best to use one below.<br>
+	<br>
+
+	className - <strong>h1.className = "coolTitle";</strong> - Will add a new class to the selected tag element, defined from the css<br>
+	classList - <strong>document.querySelector("h1").classList</strong> - Will show the classes of the selected element, which then gives a few methods you can use - Below.<br>
+	<br>
+
+	classList.add - <strong>document.querySelector("").classList.add("")</strong> - Allows you to add new classses.<br>
+	classList.remove - <strong>document.querySelector("").classList.remove("")</strong> - Allows you to remove classes.<br>
+	classList.toggle - <strong>document.querySelector("").classList.toggle("")</strong> - Allows you to toggle classes on and off. <br>
+	<br>
+
+	##Bonus<br>
+	innerHTML - <strong>document.querySelector("h1").innerHTML = "'strong'!!!!'/strong'"</strong> - This is a dangerous method to use, as it allows you to change any html on the page, by selecting the tag<br>
+	<br>
+
+	parentElement - <strong>document.querySelectorAll("li")[1].parentElement</strong> - Will select the parent of the list item, the UL, can be used again, to select the parent of UL and so on.<br>
+	children - <strong>document.querySelectorAll("li")[1].parentElement.children</strong> - Allows you to select the parent element of the list item, and then select all the children, which wis the list elements<br>
+	<br>
+	##It is important to CACHE selectors in variables - So that the browser uses less memory to remember everything such as in this example, selecting the h1 tag. <strong>var h1 = document.querySelector("h1");</strong><br>
+	</p><hr>
+
+	<h3>DOM EVENTS</h3>
+
+	<button>Click Me!</button>
+
+	<p>For the event listner for clicking, like the button above! Check the Dom.js file attatched to this page.</p>
+
+	<p>.addEvenetListener("click")[0] - Will allow the java script to listen for the specified action. Remembering to select the exact element, otherwise it will not work and return an error</p>
+	<p>.addEvenetListener("mouseleave")[0] - Will register when the mouse has left the space of the button</p>
+	<p>.addEvenetListener("mouseenter")[0] - Will register when the mouse enters the space of the element.</p><br>
+	<h4>below is a list where you are able to enter extra information onto the list </h4>
+	<p>- You do this by using document.createElement(""); then to specify to add it to the bottom of the list you need to use - document.appendChild(document.createTextNode("testing"));</p>
+	
+	<input id="input" type="text" placeholder="Enter Text.">
+	<button id="enter">Enter!</button>
+		<ul id="ul2">
+			<li id="listItem">Chocolate<button id="btn-done">Done!</button></li>
+			<li id="listItem">Oranges<button id="btn-done">Done!</button></li>
+			<li id="listItem">Milk<button id="btn-done">Done!</button></li>
+			<li id="listItem">Bread<button id="btn-done">Done!</button></li>
+			<li id="listItem">Cheese<button id="btn-done">Done!</button></li>
+			<li id="listItem">Spinach<button id="btn-done">Done!</button></li>
+		</ul>
+
+	<p>.value - will select what ever value has been entered, and place it or use it where specifed, such as above in the example.</p>
+	<p>.appenedChild - will add information to the node as the last child of it</p>
+	<p>.createTextNode - will create a text element, weather its a p tag, li tag, h1 tag, and can be put where ever is specifed.</p>
+
+	<p>Keybored and Mouse events are going to be the most popular ones that you see/use on a regular basis! </p>
+	<p><a href="https://developer.mozilla.org/en-US/docs/Web/Events">All things DOM Events</a></p><br>
+	<p><a href="https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes">Javascript Char Characters</a></p><br>
+
+	<p>For something simple like changing the background of a page, all you need to do is to select the body/background id, store it in a variable, and change it using the style element - body.style.background = "red"; - Then you can add this to button clicks, enter keys etc...</p>
+	
+	<hr>
+	<p>
+		<a href="https://www.w3schools.com/js/js_htmldom.asp">This is the full explination of the DOM.</a>
+	</p>
+	<script type="text/javascript" src="../js/dom.js"></script>
+</body>
+</html>
+

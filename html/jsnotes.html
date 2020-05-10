@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Notes</title>
+	<style type="text/css">
+		body {
+			background-color: aliceblue;
+		}
+	</style>
+</head>
+<header>
+	<nav>
+		<a href="index.html"><strong>GO Home!</strong></a>
+	</nav>
+</header>
+<body>
+	<h3><a href="java.html">Go here for different javascript console programs</a></h3>
+<p>
+	JAVASCRIPT TYPES<br>
+-----------------<br>
+1. Number - Any number inputs, Such as 5 x 5, 5 + 5, 5 % 5 - % = gives the remainder of the input (how many timees the first goes into it)<br>
+2. String - "hello" "hello" + " world" anything in quotations is a string '' can be used, but have to be carefull ie don\'t to tell it to ignore the quote<br>
+3. Boolean - true or false <br>
+4. Undefined - means the variable hasnt been defined, effectivley meaning it doesnt exist yet as nothing has been assigned to the variable<br>
+5. Null - Means there is nothing there and nothing can be placed there <br>
+<!-- 6. Symbol (new in ECMAScript 6) --><br>
+7. Object - Are collections of properties, ie - User information, name, age, married, hobby<br>
+
+10 + "34" - will print 1034, as you cant add a sting to a number, but 10 - "7" - will print 3, as you cant minus a string, so it will try help you out and print the <br>mathmatical answer.<br>
+NaN - Not a number<br>
+
+
+JAVASCRIPT COMPARISONS<br>
+-----------------<br>
+<br>
+!== - Doesnt equel the same value - 4 !== 5 True - 3 !== 3 False<br>
+=== - Equals the same value <br>
+>= - Greater than or equel to the value<br>
+<= - Smaller than or equel to the value<br>
+> - Greater than the first value <br>
+< - Smaller than the first value <br>
+
+JAVASCRIPT VARIABLES<br>
+-----------------<br>
+var - Is basically the memory, IE var george = "These pretzles are making me hungry" +"!"; when george is inputed, it will print the string<br>
+	rules:<br>
+		Needs to start with a letter, Never a number - can end with numbers<br>
+		Cant start with a symbol '&'<br>
+		Can start with - $ or _<br>
+<!-- let (new in ECMAScript 6)-->  
+<!-- const (new in ECMAScript 6)-->
+
+Camel case - when the second words first letter is capital ie - firstName<br>
+prompt()  - is basically asking the user for an input ie prompt("What is your username?") - and when its inputted, that will be the result <br>
+	It automatically changes everything into a string, as it expects words, But if a number is needed - Number(first) it will output the first variable as a number value.<br>
+	Then you can add these 2 inputs into a seperate variable, var sum = Number(first) + Number(second);<br>
+	Which will output the answer of the 2 inputs, - Basic calculator <br>
+<br>
+CALCULATER CODE:<br>
+
+	var first = prompt("First Number");<br>
+	var second = prompt("Second Number");<br>
+	var sum = Number(first) + Number(second);<br>
+	alert(sum);<br>
+
+alert() - Will print out the variable stated next to it - not asking for an input, like prompt() <br>
+	strings can also be added inside of the brackets, making sure to use the "" and the + to output all data <br>
+<br>
+When writing javascript it is always reccomened to put ';' at the end of every Expression - which is any line of code. only in rare cases will not using the semi-colon break <br>your program if you forget, but just incase, always use it
+<br>
+JAVASCRIPT CONDITIONALS<br>
+-----------------<br>
+if - essentially comparing its inputs - if (name === "Billy") { alert("Hi Billy");}<br>
+else - Is saying when the 'if' element is false, use this instead <br>
+else if - allows multiple inputs for outputting one thing - example below <br>
+<!-- ternary operator -->
+<!-- switch -->
+
+Control flow is how the program flows, Normally it will flow in one long continues line! unless it has 'else' statements and has to use them because it didnt get the desired input.<br>
+
+This one will print out Hi Billy, as the varible is true<br>
+	
+	var name = "Billy";<br>
+	if (name ==="Billy") {<br>
+	    alert("Hi Billy"); <br>
+	} else {<br>
+	     alert("I dont know you!");   <br>
+	}<br>
+<br>
+This one, the varible 'name' has been changed, so it will use else and print 'I dont know you!'<br>
+	
+	undefined<br>
+	name = "Kyle"<br>
+	"Kyle"<br>
+
+	if (name ==="Billy") {<br>
+	    alert("Hi Billy");<br>
+	} else {<br>
+	     alert("I dont know you!");   <br>
+	}<br>
+
+Above is called and 'IF ELSE STATEMENT'<br>
+
+Depending on the variable information, it will print out either statement <br>
+<br>
+	if (name ==="Billy") {<br>
+	    alert("Hi Billy");<br>
+	} else if (name === "Kyle") {<br>
+	     alert("Hi Kyle!");   <br>
+	} else {<br>
+	    alert("I dont know you!");<br>
+	} <br>
+<br>
+JAVASCRIPT LOGICAL OPERATORS<br>
+-----------------<br>
+&& - Thie means 'AND' - allows you to check 2 different variables - Example below <br>
+|| - This means 'OR' - example below<br>
+! - This means 'OPPOSITE' - Example below<br>
+
+AND Example<br>
+	
+	if (name === "Bob" && name === "Smith") {<br>
+	 	alert("Hi Bob Smith");<br>
+	}<br>
+
+	This statement will print out the alert, if the first and last name variables are not what it expects - The same can be applied to 'OR'<br>
+
+		if (firstName === "Kyle" && lastName === "Chart") {<br>
+		alert("Hello Kyle Chart"); <br>
+	    } else {<br>
+	        alert("Who are you?");<br>
+		}<br>
+
+OR Example<br>
+	
+	if (firstName === "Billy" || lastName === "Ann") {<br>
+	alert(Hello Billy Or Ann);<br>
+	}<br>
+<br>
+OPPOSITE Example<br>
+
+	!true - false<br>
+	!false - true<br>
+
+	if (!(name === "Bob")) {<br>
+		alert("Hi Bob");<br>
+	}<br>
+
+the above example will not print the alert, if the 'name' is 'Bob' if it is 'Bob' then it will print the alert <br>
+JAVASCRIPT FUNCTIONS<br>
+-----------------<br>
+var a = function name() {} - Function Expression<br>
+function name() {} - function decleration<br>
+return - Returns the final desired information, to wherever is specified, and also ends the function. <br>
+<!-- () => (new in ECMAScript 6) --><br>
+
+These are what perform the actions, Either a single action or multiple actions<br>
+() - Means calling the function, to execute it <br>
+Arguments - Are what is given to the functions to execute inside the brackets ("Hello There") ; - Also able to have multiple arguments inside seperated by a comma. Dependent on the type of function.<br>
+When creating functions, you also need to call them, otherwise they wont be executed, and you wont get the desired outcome!!!!<br>
+
+JAVASCRIPT DATA STRUCTURES<br>
+-----------------<br>
+Array - Is essentially a list, that holds different information - As a way to organise different information. Arrays can be used to store any information, such as - Strings, <br>Functions, Numbers, Booleans - Each array can hold multiple things, so you dont need 1 array for numbers and strings, they can all be stored together - BUT THIS IS NOT <br>ADVISED, AS IT CAN BE A PERFORMANCE ISSUE. <br>
+Object
+
+JAVASCRIPT LOOPING<br>
+-----------------<br>
+for - Keeps looping through the code, a set number of times that has been specified in the block of code<br>
+while - keeps running through the block of code, until the set statmenet is true <br>
+do <br>
+forEach (new in ECMAScript 5) - allows you to call a function once for each element in an array, in order.<br>
+
+
+
+JAVASCRIPT KEYWORDS<br>
+-----------------<br>
+
+NEVER USE THESE WORDS FOR NAMING THINGS, THEY ALREADY HAVE SET USES AND CANT BE USED ELSEWHERE!<br>
+
+break<br>
+case<br>
+catch<br>
+class<br>
+const<br>
+continue<br>
+debugger<br>
+default <br>
+delete<br>
+do<br>
+else - says, if another element returns false, use this element after me <br>
+export<br>
+extends<br>
+finally<br>
+for<br>
+function - These perform the actions defined by itself - are also variables<br>
+if - compares its inputes to other information<br>
+import<br>
+in<br>
+instanceof<br>
+new<br>
+return - For the function to show the output, 'return' is needed, as this is the secondary step JS takes along its path. Singular use, instantly ends the function, in certain <br>cases. It can appear more than once, example in the java file.<br>
+super<br>
+switch<br>
+this<br>
+throw<br>
+try<br>
+typeof<br>
+var - is a variable which holds certain information, such as numbers or strings <br>
+void<br>
+while<br>
+with<br>
+yield<br>
+
+-----------------<br>
+
+console.log - prints what ever is specified to the console<br>
+index - Means the numbers in an array, ie - if cat is in position 0 - its index is 0 - In arrays <br>
+method - is a function inside of an object<br>
+
+</p>
+
+<h3>In the java file of the main directory, there are a few excercises to show of different way to code javascript.</h3>
+</body>
+</html>

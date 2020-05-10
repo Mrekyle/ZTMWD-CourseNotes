@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Advanced JS Notes</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../css/advancedjsnotes.css"> -->
+	<style type="text/css">
+		body {
+			background-color: aliceblue;
+		}
+	</style>
+</head>
+<header>
+	<nav>
+		<a href="index.html"><h2><strong>Home Page</strong></h2></a><hr>
+	</nav>
+</header>
+<body>
+	<h2>Scopes</h2>
+	<p>Scopes are basically the parent, for example the root scope is always the broswer window, where you call the functions and the variable's into action. The child scope is whats included inside a function, that has a singular parent! So for any information it needs, it will ask its parent first if it knows where it is, if not it will ask the root cope (the parent of the function) to see if it knows where it is. If it doesnt, you will get an error! Adding a function name or a varible name, will allow it to be accessed in the root scope directly, however if the variable or function are inside another one, it will only be avaliable inside its parent scope.</p>
+
+	<h2>Ternary Operator</h2><br>
+	<p>condition ? exp1 : exp2;<br></p>
+	<p>this is essentially a yes or no statement, the '?' means yes and the ':' means no, for example, in the facebook app, you can ask if the user is valid. And either say enter or please try again. It is best used for when there is 2 possible outcomes to any sort of input. Example below</p>
+	<p>
+		function isUserValid(bool) {<br>
+			return bool;<br>
+	}<br>
+	var answer = isUserValid(true) ? "You May Proceed" : "Please Try Agaain";<br>
+	You are also abl to add these in the middle of strings too just remembering to close the " " and add a + so it knows to continue on.
+	</p><br>
+	<h2>Switch</h2>
+	<p>Switch statments basically say, check what ever input you receive, and act accordingly such as in the example below.</p>
+	<p>
+		function moveCommand(direction) {<br>
+			var whatHappens;<br>
+			switch (direction) <br>
+				case "forward";<br>
+					whatHappens = "you move forward";<br>
+					break;<br>
+				case "backward";<br>
+					whatHappens = "you move backward";<br>
+					break;<br>
+				case "left";<br>
+					whatHappens = "you move left";<br>
+					break;<br>
+				case "right"<br>
+					whatHappens = "you move right";<br>
+					break;<br>
+				defult; <br>
+					whatHappens = "Please enter a valid direction";<br>
+		}<br>
+		return whatHappens;<br> 
+	}<br>
+	case - is saying incase i get this, do this<br>
+	break - is saying to break out of the switch statement, for example, if it gets a valid input, it stops there and doesnt waste time checking the rest of the statment.<br>
+	</p>
+
+	<h2>Java+ECMAScript</h2>
+	<p>They are exactly the same thing, just different names for the standadised way that javascript is run/programmed and read across all different browsers and platforms. </p>
+
+	<h2>const/let</h2>
+	<p>These are the new ways of writing and creating variables. Essentially never really having to use 'var' again! 'let' allows you to create a new scope when its inside any statment. For example with 'var' you are unable to to redeclare it, as it can be accedd outside of the scope. with 'let' you are able to do this, as it creates its own scope when inside of a function, called a block scope. IE<br>
+		<br>
+	let i = 5;<br>
+	for (let i = 0; i < 10; i++) {<br>
+ 	 // some statements<br>
+	}<br>
+	// Here i is 5<br>
+	<br>
+	Against a traditional variable, which would redefine 'i' outside of the statment.<br>
+	With 'const' you are not able to reasign/redefine the value! As it is a constant, unless changed in the source code directly, you will be unable to change it using any methods. But if it has different properties inside of the object, such as a power level, or its skill level, you are able to change that<br>
+	Basicly, if you are using something that can never change and has to stay the same, use 'const' if you are using something that can change from true to false use 'let'.
+	</p><br>
+	<h2>Destructuring</h2>
+	<p>Basically this allows you to select multiple properties inside of an object all at the same time in one line of code, IE<br>
+		const obj = {<br>
+			player = "bobby";<br>
+			skillLevel = "80";<br>
+			wizard = "false";<br>
+	}<br>
+	const { player, skillLevel } = obj<br></p> 
+	let { wizard } = obj;<br>
+	<p>What the above code is doing, is selecting multiple properties inside of the object at the same time in the same line of code. This allows us to not have to write each 'call' out indiviiully.</p><br>
+	<h2>Object Properties</h2>
+	<p>You can now make the properties inside objects dynamic by assigning them to a 'const' for example. To do this put the properties inside '[]' allowing properties inside objects to do things like a math calculation, or to access the name of someone from outside to be used.  IE<br>
+		<br>
+	const name = "john snow";<br>
+	const obj = {<br>
+		[name]: "hello";<br>
+		[1 + 3]: "hihi"<br>
+	}<br>
+	<br>
+	The above when obj is accessed, will return -<br>
+	'john snow: hello'<br>
+	'4: hihi '<br>
+
+	</p>
+	<h2>Template Strings</h2><br>
+	<p>Template strings allow us to make strings simpler such as having to worry about have extra apostraphies and having to use the '/' or if you wanted to add something stored variable. Now you can do it all in one line of code without breaks, just use the '``' the backwards looking comma, this will allow you to write a string inside. If you want to use a cached name or something use ${sally} for example, and just carry on. IE below<br>
+	const greetingBest = `Welcome, ${name} You are simply the best, I can tell you are ${age-10} year's old`<br>
+	This allows us to not have to use the + when connecting strings, or worry about the '/' in certain words because of the appostrophie.<br>
+	</p>
+	<h2>Default Arguments</h2><br>
+	<p>These allow us to set a defult argument for the attatched string, this is used if no paramaters(information) has been given to fill these arguments. IE below<br>
+		function greet(name=" ", age="30") {<br>
+			const greetingBest = `Welcome, ${name} You are simply the best, I can tell you are ${age-10} year's old`<br>
+	}<br>
+	</p> 
+	<h2>Symbol</h2><br>
+	<p>These are used to create compleatly unique types, even if they are exactly the same, they will never conflict with each other. Mainly used for defining object properties, this is so each object is different, even though it would be the exact same as another. Its used like this <br>
+		let sym1 = symbol();<br></p>
+		<h2>Arrow Functions</h2><br>
+		<p>These are used as a short hand form of 'function' you use this by doing '=>' and it automatically assumes you want to return this information if you only need one return, Example below<br>
+		function add(a, b { ---- Old way <br>
+			return a + b;<br>
+	}<br>
+	const add = (a, b) => a + b; ---- New Way <br>
+	</p><hr><br>
+
+	<h1>Advanced Functions</h1>
+	<p>With the new ways of writing functions, it allows us to create a new scope everytime the function is run, meaning that every time we run it, it will create new variables, even if its exactly the same as before. But this allows us to never have any confliciting varibles inside of functions or objects.</p>
+	<p>Closures - the function ran, the function executed, its never going to execute again,  but its going to remember that there are refenerences to those variables, so the child scope always has access to the parent scope. </p>
+	<h2>Currying</h2>
+	<p>Currying is basically a function that accepts 2 seperate inputs. IE a function inside a function for multiplication, will need 2 inputs to run<br>
+		const multiply = (1) => (b) => a * B; - That is a function inside a function, '=>' - means a new function essentially.<br>
+		SO to get it to run, you will need to give it 2 seperate function inputes. multiply(2) (4); - then it will return the answer of 12.<br>
+	Another way of saying this is, its the process of converting a function that takes multiple arguments at the same time, to a function that takes multiple arguments one at a time. This makes the function more extensable, For example, you can have the base function accepting 2 arguments, seperatley, and create another that multiplies by 5, so when you want to call it, you only need to give the number you want multiplied by 5 - Check the video on the course, incase confused still.</p><br>
+	<h2>Compose</h2>
+	<p>This is the act of putting 2 functions together to form a third function, where the output of one function is the input of the other function. Example below<br>
+		const compose = (a, b) => (f) => a(b(f));<br>
+		const sum = (num) => a + 1;<br>
+		compose (sum, sum)(5);<br>
+	What is happening,<br> 
+	a+b=f (func 1)<br>
+	b+f=... (func 2)<br>
+	</p><hr><br>
+	<h1>Advanced Arrays</h1>
+	<p>Map - creates a new array from the existing array, whilst having completed what ever it is set to do. You must also always return it.<br>
+		const mapArray = array.map(num => num * 2); - Will automatically return as its only doing one thing and is in short form, if multiple things are being done, you will have to return it at the end, or where needed<br></p>
+	<p>Filter - allows you to filter out specific arguments such as 'return num > 5:' will only return the numbers greater than 5 and put them into a new array.<br>
+	const filterArray = array.filter(num => num > 5); - Will automatically return as its only doing one thing and is in short form, if multiple things are being done, you will have to return it at the end, or where needed<br></p>
+	<p>Reduce - Can be used for many different things, it will basically reduce the array to a single value<br>
+		const reduceArray = array.reduce((accumulator, num) => {<br>
+			return accumulator + num;<br>
+	}, 0); - accumulator starting value<br>
+	The above code will return the sum of all the numbers in the array.</p>
+
+	<h1>Advanced Objects</h1><br>
+	<h2>Reference Types</h2>
+	<p>Reference types are not primative types, that means they are not defined by javascript, such as strings, null, undefined. Its means they are created by the programmer.  For example,<br>
+		let number = 1 - is defined by javascript, it already knows its a number<br> let object1 = {value: 10} - <br>thas been defined by the programmer, allowing you to reference that object elsehwere, by saying something is the same as it! But when creating a new object with the same value, as it is not referenced by the other object, it can be the same but also false.</p>
+		<p>Arrays are also objects, just different data structures.</p>
+	<h2>Context</h2>
+	<p>Tells you where you are with in the object. using 'this' asks what is the object enviroment that we are in. Basically asking what is to the left of the '.'basically asking where you are.</p>
+	<h2>Instantiation</h2>
+	<p>This means you are making a copy of the object and re use the code, <br>
+	class Player {<br>
+		constructor(name, type) {<br>
+			this.name = name;<br>
+			this.type = type;<br>
+	}<br>
+	introduce () {<br>
+		console.log(`Hi I am ${this.name}, I'm a ${this.type}`);<br>
+	}<br>
+	}<br>
+	Evertime you make a copy of this class to create a new player, the consturctor is the first code that is run, so every class will have these arguments. The above code is saying, that everytime a player object is created, it will always have these arguments and will always be able to introduce itself.</p>
+	<p>
+		class Wizard extends Player {<br>
+			constructor(name , type) {<br>
+				super(name, type);<br>
+		}<br>
+			play() {<br>
+				console.log(`WHEEEEE i'm a ${this.type}!`)<br>
+		}<br>
+	}<br>
+	const wizard1 = new Wizard('Shelly', 'Healer');<br>
+	const wizard2 = new Wizard('Shawn',  'Spell Master');<br>
+	<br>
+	The above code is saying, that once a player object has been created, and wizard is the selected class, I want to add on these protperties. When ever you want to extend a class, you will need to use 'super' so you have access to the first constructor, which is the base information. Then you are able to create new constants with different information, that is either specifed by the programmer or by the input of the player.
+	</p>
+	<a href="https://sdras.github.io/object-explorer/">Object Explorer</a><br><hr>
+
+	<h1>Pass By Value/reference </h1>
+	<h2>Primative types - predefined by the language - not an object and has no methods</h2>
+	<h2>Object types - are defined by the programmer and have individual methods.</h2>
+	<p>Pass by value means, that we copy the value, and create it somewhere else ie - let a = 5: let b = a: - b will equel 5, but in no way will be connected to a, Its just copying its value and storing it somewhere else</p>
+
+	<p>Pass by reference when using objects(defined by the programmer), means that it - let obj1 = {name: "Yhao", password: "123"}; - let obj2 = obj1; - Will always be the same information. So if you change the password, on obj2, it will also change the password on obj1, Becsause when you told it to change the password, it went to the memorey where obj1 is, and goes "oh" He must mean that everything here must changed to this new information.</p>
+
+	<h1>Type Coercion</h1>
+	<p>Means that when the operants (things to the right and left) are different types(number and string) means one of them will convert them into the same type. IE 1 == '1'; will convert the string into a number type. The double '==' says compare these 2 values, and if they have different types try to coerce one into the same type.</p><hr>
+	<h2>Advanced Loops</h2>
+	<h3>For of</h3>
+	<p>Start with a for loop is for arrays and strings - <br>
+		for (item of backet) {<br>
+		console.log(item);<br>
+	}<br>
+	What we are doing here is iterating over the certain array, means we are able to go 1 by 1 and look at the items. Can be done, over arrays and strings.
+	</p>
+	<h3>For In</h3>
+	<p>The for in loop works with objects for example - <br>
+		const detailedBasket = {<br>
+		apples: 5,<br>
+		mellons: 1,<br>
+		bananaS: 8,<br>
+		chocolate: 4,<br>
+		pears: 5,<br>
+	}<br>
+	for (item in delailtedBasket) {<br>
+	console.log(item);<br>
+	}<br>
+	The for in loop, allows us to go over and see the objects properties - NOT ITERATING - we are enumerating - For objects.
+	</p><hr>
+	<a href="https://medium.com/sungthecoder/javascript-module-module-loader-module-bundler-es6-module-confused-yet-6343510e7bde">Javascript Module history.</a>
+<!-- <script type="text/javascript" src="../js/advancedjsnotes.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>gitHub/Command Line</title>
+	<style type="text/css">
+		body {
+			background-color: aliceblue;
+		}
+	</style>
+</head>
+<header>
+	<nav>
+		<a href="index.html">Go home</a>
+	</nav>
+</header>
+<body>
+	<ol>
+		<li>ls - shows your file directory</li>
+		<li>cd ... - gets you into what ever directory you need</li>
+		<li>git clone (repository https link) - creates the folder for the git repository on your laptop</li>
+		<li>Copy/paste files into the new folder</li>
+		<li>git status - checks the status of the files, to see if there has been any changes that need to be commites</li>
+		<li>git add (file name) or '.' - to add the files to the repository</li>
+		<li>git status - to make sure all the files you want are selected</li>
+		<li>git commit -m 'Hello world' - to submit all changes, and to add a message to say what the updates are</li>
+		<li>git push - final command to make sure everything is put where it is supposed to be</li>
+		<li>git pull - will update all files from what ever branch that is selected to the most up to date copy.</li>
+		<li>git branch ... - will create a new branch directory on the repository</li>
+		<li>git checkout ... - will switch the branch to the one you want to work on. </li>
+	</ol>
+	<ol>
+		<li>npm -v - checks the latest version</li>
+		<li>npm update - Updates to the highest version of the npm files that are being used</li>
+		<li>npm install - Will install all node modules that are required for the project, so you dont ever have to host them on your server, each developer can just download them directly from the terminal when they need them for the project</li>
+		<li>npm install -g ... - installs a package globally - then have to access it in the selected folder</li>
+		<li>non init - creates a usuable json file in the selected folder</li>
+		<li>live-server - creates a live server of the website, that updates automatically with every save.</li>
+		<li>ctrl c - TO STOP A LIVE SERVER FROM RUNNING</li>
+	</ol>
+	<ol>
+		<li>npx create-react-app ... - will create the react app and install everything react needs for the app!</li>
+		<li>npm start - will launch the live server, so your project updates in real time.</li>
+	</ol>
+
+	<p>The best way to use git is to have keep the master branch as the one that is viewable to the public, the final product that you want everyone to see! And then create branches that each individual team member works of and commits too. Then once its been reviewd and tested and approved by all members, bring it back into the master branch by merging. To get it to show the branch directory use this code - <br>
+	PS1='\[\033[0;32m\]\[\033[0m\033[0;32m\]\u\[\033[0;36m\] @ \w\[\033[0;32m\] - [$(git branch 2>/dev/null | grep "^*" | colrm 1 2)\[\033[0;32m\]]\[\033[0m\033[0;32m\] \$\[\033[0m\033[0;32m\]\[\033[0m\] '</p>
+
+	<p>You can easilly deploy react apps on Git too, by using the git pages module from react, <a href="https://create-react-app.dev/docs/deployment/#github-pages-https-pagesgithubcom">Git Pages For React</a> Follow along with the instal instructions, either here or in react lesson 220. It also tells you how to deploy your app in a variety of other ways too! This allows you to deploy the app without having to upload all the node modules that were used for creating the app!</p>
+</body>
+</html>

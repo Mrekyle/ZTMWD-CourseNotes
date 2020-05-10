@@ -1,0 +1,72 @@
+const promise = new Promise((resolve, reject) => {
+	if (true) {
+		resolve('Stuff Worked');
+	} else {
+		reject('Error, it broke!');
+	}
+});
+
+const promise2 = new Promise((resolve, reject) => {
+	setTimeOut(resolve, 100, `Hello There`);
+})
+
+const promise3 = new Promise((resolve, reject) => {
+	setTimeOut(resolve, 2000, `I love Chocolate` + `!`);
+})
+
+const promise4 = new Promise((resolve, reject) => {
+	setTimeOut(resolve, 3000, `Is it me you're looking for?`);
+})
+
+Promise.all([promise, promise2, promise3, promise4]) // This is for calling multiple promises! it has to be given in an array format, and will be 
+	.then(values => {								 // ran in the order given, and outputted in the order given, unless a setTimeOut statment has been ran
+		console.log(values);						 //meaning it will wait for all of the promises to be resolved to give the output! If there is no time out
+	});												 // Statement, it will return then straight away as soon as they have been resolved
+
+promise.then(result => console.log(result)); //How to call a single promise 
+
+promise // - THIS IS CALLED CHANINING IN PROMISES - used for giving defferent results for different outcomes 
+	.then(result => result + `!`)
+	.then(result2 => {
+		console.log(result2);
+	})
+	.catch(console.log(`Error!!!`)); // This catches any error that may happen in the promise, and log the error out - can use throw Error to test this 
+									 // Only checks the code above itself. So if something has an error after it has been run, it wont catch the error and 
+									 // output what has been specified for it 
+
+
+// A promise is an object that may produce a single value some time in 
+// the future : either a resolved value, or a reason that it's not resolved 
+// (e.g., a network error occurred). A promise may be in one of 3 possible states: fulfilled, rejected, or pending.
+
+// Mainly usd for stuff thats happening in the background, such as getting a tweet from someone from another server, or optamising an image
+// then when it has been resolved (got from the server) it will output its promise, meaning it will show you!
+
+// With setting time out, basically means in (time set) return this or do this.. it is measured in mili seconds.
+// so 1000 = 1 second 5000 = 5 seconds, and so on
+
+//REAL WORLD EXAMPLE/USE
+
+const url = [ // For example grabbing the users from a server, or the comments, or pictures 
+	'https://jsonplaceholder.typicode.com/users',
+	'https://jsonplaceholder.typicode.com/posts'.
+	'https://jsonplaceholder.typicode.com/albums'
+]
+
+Promise.all(url.map(url => {					// This is effectivly promising to call all of this data from the specifed urls from the array
+	return fetch(url).then(resp = resp.json())	// and outputting the results onse they have been resolved! 
+})) .then(results => {
+		console.log(results[0])
+		console.log(results[1]);
+		console.log(results[2]);
+})	.catch(() => console.log(`Error!`));  		// This will catch any errors that happen! And you are able to do what ever you want with the error too, not just log it
+												// But with .all it will mean if one fails, they all fail! 
+												// you can prevent this by calling them seperatly if able to do so, but this will add extra time onto the 
+												// loading of the page/information needed! 
+
+
+
+
+
+
+

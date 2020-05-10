@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Css Grid Lesson</title>
+	<link rel="stylesheet" type="text/css" href="../css/cssgrids.css">
+</head>
+	<h4><a href="index.html"><strong>Click here to go home</strong></a></h4><br>
+	<h4><a href="gridlessonexc.html"><strong>Click here for the lesson excercise</strong></a></h4><hr><br>
+<body>
+	<p>Css grids, flexbox and bootstrap can be used together! There is no one that beats the rest! they all do different things in different ways, Some more effective than others. Flex box is best used for coloumn layout - simlar to bootstrap. CSS Grids is best used for both coloumns and vertical, IE best for gallerys, or displaying your own projects.</p>
+
+	<p>To speficify/activate the Grid system you need to wrap everything into a div, with a name and activate grid in the CSS file. The elements I will put below.</p>
+	<ul>
+		<li>display: grid; - Activates the grid system</li>
+		<li>grid-template-coloumns: 300px 300px; - This tells the system how many coloumns you are using, must be inputted in pixels.</li>
+		<li>grid-gap: 5px; - Tells the browser how much space you want inbetween the grids</li>
+		<li>grid-template-coloumns: 1fr 1fr 1fr; - Says how many columns you want, and how much big you want the column, ie 1fr is 1 column and makes it the whole width of the display, 2fr 1fr is 2 coloumns taken up by one card, and 1 column taken up by another. See example page to see in action. This is called a fraction element. This also makes the selected properties responsive.</li>
+		<li>grid-template-rows - Does the same as coloumns, just the rows of the page </li>
+		<li>grid-template-rows: repeat(1, 1fr) - just shortens the input, instead of putting 1fr 1fr 1fr - it will automatically repeat this THe first number states the coloumn number, and the second is the fraction of the display for the size of the coloumn.</li>
+		<li>'auto' - this means it will fill in what ever space is avaliable, also thought as the max size of the content in the grid, meaning there will be no extra space around the content in that grid. Adjusting the rest of the grids in the coloumn or row, so they are all the same size. Also meaning that the grid will surround what ever content is avaliable </li>
+		<li>justify-items: start, center, stretch(default), end - essentially moves the content of the grids, inside the specified size to wherever is stated. This is for the <strong>coloumn</strong> axis. </li>
+		<li>align-items: - has the same elements but this is used for the <strong>row</strong> axis.</li>
+		<li>grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); - using this will make the system the most responsive design, it will auto adjust the grids to the specified sizing, no matter the display size.</li>
+	</ul> <br>
+	<h1>JUSTIFY-SELF: COLUMNS - ALIGN-SELF: ROWS</h1>
+	<p>The above is used as a whole, but you can also use it seperatly so every single grid can be a different size, just using a different div name inside the main div, setting all different syntax.</p>
+	<ul>
+		<li>grid-coloumn-start: 1; is saying to start at the first grid - adjust the number, as to where is starts in the system.</li>
+		<li>grid-coloumn-end: 3; is telling at what grid number is shoukld end - adjust the number, as to where you want it to end in the system.</li>
+		<li>grid-coloum 1/3 - is the short hand way of doing this, the first number is the start and second is the end. </li>
+		<li>To make the above a permenant thing such as stretch the whole page, reguardless of the size change the second value to -1.</li>
+		<li>grid-coloumn: span 2; makes what ever selected content span across the set number of grids, no matter what</li>
+		<li>grid-row: is exaclty the same as above, it just controlls the rows instead</li>
+		<li>justify-self: is the same as items, but as its a single entity, it will only affect its self. This is used for columns</li>
+		<li>align-self: Is again the same as above, but adjusts it in the rows. </li>
+	</ul>
+	<br>
+	<p>For Grid to work, it must be activated in each parent section or class that it is required.</p>
+	<p>When placing content around in the grid system, you must use the parent class of the content, not the parent class of the entire section/div. Ie for this to work fully work, you must wrap each individual peice of content in their own div, to allow this to work.</p>
+	<p>Ie for putting the content in the direct center of a grid, use the following code. Remembering to adjust the grids to the desired size<br>
+	display: grid;<br>
+	grid-template-columns: repeat(2, 1fr);<br>
+	grid-gap: 5px;<br>
+	align-items: center;<br>
+	justify-items: center;<br>
+	</p>
+	<hr><br>
+	<h4><a href="http://grid.malven.co">Cheat Sheet for all things CSS Grid.</a></h4>
+</body>
+</html>  
