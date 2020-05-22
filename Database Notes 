@@ -1,0 +1,99 @@
+Relational databses have multiple tables that all link together, Such as in twitter there will be a table that stores the account information,
+Another one that stores the tweets the user has sent, another one that tracks the people they follow. And all of these are linked together by the parent of it directory 
+
+To install a database you need to have a terminal add on called brew. Which is in my dev space folder
+You will also need to have some form of GUI for databases, there are heaps out there but i used psequel, obviously there are better ones too
+once installed, go into the terminal and do :-
+brew install postgresql - Or what ever database you are using 
+brew services start postegresql -  Will stat the databse 
+brew services stop postgresql - Will stop the database from running
+createdb '...' '...' - To create a databe and get started, the second one can set a port for the db
+psql '...' - In the terminal, will connect to the databse inside the terminal allowing you to do things
+Then open the gui of choice, put in the information, and click connect 
+
+TERMINAL
+=========
+
+CREATE TABLE table_name (column_1 datatype, column_2 datatype, column_3 datatype); - Will create a table for you, just change the name, and the column names, and also specify what type of data is being stored 
+\d - will show the database in the terminal 
+\q - will exit to the terminal
+
+NEW TABLE 
+==========
+
+INSERT INTO table_name (column_1, column_2 column_3) VALUES ('value_1', 'value_2', 'value_3'); - Will insert informaiton into the table, just say what table and column you want 
+
+SELECTING INFORMATION
+=====================
+
+SELECT name, age, birthday FROM users; - Will select the information from the selected database and its columns 
+SELECT * FROM users; - WIll select all the columns and information from the selected database
+
+ALTERING THE TABLE
+==================
+
+ALTER TABLE table_name ADD column datatype; - This will add an extra column to the selected table
+
+UPDATING THE TABLE
+==================
+UPDATE users SET score = 50 WHERE name='Kyle'; - This updates/adds new data to the table where specified 
+UPDATE users SET score = 50 WHERE name='Kyle' OR name='Sally; - Will update both users to the same score 
+
+SELECTING USERS WITH SAME FIRST LETTER OF NAME 
+===============================================
+
+SELECT * FROM users WHERE name LIKE 'K%'; - Will select all users with the first letter of there name as k
+
+ORDERING THE LIST 
+===================
+
+SELECT * FROM users ORDER BY score ASC/DESC; - Will order the list
+
+FUNCTIONS
+=========
+
+SELECT AVG(score) FROM users; - Will calculate the average score of the users, but can be done with any number value
+SELECT SUM(score) FROM users; - Will calculate the total number of all the users score, But can be done with any number value
+SELECT COUNT(name) FROM users; - Will count have many users are in the database
+
+LINKING TABLES TOGETHER
+========================
+
+CREATE TABLE login (
+ID serial NOT NULL PRIMARY KEY,     
+secret VARCHAR (100) NOT NULL,
+name text UNIQUE NOT NULL,     		
+);
+
+- NOT NULL means it has to be filled in no matter what
+- PRIMARY KEY Means that its the main key for that specific information
+- serial means that when new information is entered, it will automatically increment ie 1, 2, 3 ...
+- VARCHAR allows you to set a value of the lenght of information to store, In this case the hash wont be longer thatn 100 characters
+- UNIQUE  means that it has to be a unique name, if it already exists, it cant be created again
+
+JOINING TABLES - Selecting matching information in different tables to be used 
+==============
+
+SELECT * FROM users JOIN login ON users.name = login.name; - This will get all matching information frome each table
+
+DELETE 
+======
+
+DELETE FROM users WHERE name='sally'; - Will remove the user from the database with tht name sally
+DROP TABLE users; - Will delete the table with the specified name 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
